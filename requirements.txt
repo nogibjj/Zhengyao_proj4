@@ -1,0 +1,7 @@
+fire
+black
+pylint
+pytest
+fastapi
+uvicorn
+databricks
