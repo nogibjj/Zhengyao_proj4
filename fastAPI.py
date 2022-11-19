@@ -12,10 +12,18 @@ async def root():
 
 @app.get("/multiply/{num1}/{num2}")
 async def multiply(num1: int, num2: int):
-    """Add two numbers together"""
+    """multiply two numbers together"""
 
     total = num1 * num2
     return {"total": total}
+
+
+@app.get("/sort/{arr1}")
+async def sort(arr1: str):
+    """sort an array"""
+
+    res = ''.join(sorted(arr1))
+    return {"sorted arr": res}
 
 
 # @app.get("/query")
