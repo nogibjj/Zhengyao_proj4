@@ -17,6 +17,7 @@ async def getWeather(city: str):
     sky = weatherinfo[2]
     return {"City: " + city + ", " + "Temperature: " + temp + ", " +  sky}
 
+
 @app.get("/cmptemp/{city1}/{city2}")
 async def getWeather(city1: str, city2: str):
     tempinfo1 = queryTemp(city1)
@@ -27,6 +28,7 @@ async def getWeather(city1: str, city2: str):
         return {city1 + " is hotter than " + city2}
     else:
         return {city1 + " has the same temperature as the " + city2}
+
 
 @app.get("/sorttemp/{cities}")
 async def sortWeather(cities: str):
@@ -44,20 +46,20 @@ async def sortWeather(cities: str):
     return str
 
 
-@app.get("/multiply/{num1}/{num2}")
-async def multiply(num1: int, num2: int):
-    """multiply two numbers together"""
+# @app.get("/multiply/{num1}/{num2}")
+# async def multiply(num1: int, num2: int):
+#     """multiply two numbers together"""
 
-    total = num1 * num2
-    return {"total": total}
+#     total = num1 * num2
+#     return {"total": total}
 
 
-@app.get("/sort/{arr1}")
-async def sort(arr1: str):
-    """sort an array"""
+# @app.get("/sort/{arr1}")
+# async def sort(arr1: str):
+#     """sort an array"""
 
-    res = ''.join(sorted(arr1))
-    return {"sorted arr": res}
+#     res = ''.join(sorted(arr1))
+#     return {"sorted arr": res}
 
 
 # @app.get("/query")
